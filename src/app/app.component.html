@@ -1,0 +1,37 @@
+<mat-accordion *ngIf="!interval">
+<mat-expansion-panel  hideToggle>
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      Pagar con webpay
+    </mat-panel-title>
+    <mat-panel-description>
+      Ingresa el monto para probar el servicio
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+
+  <mat-form-field>
+    <input matInput name="$amount" placeholder="Monto" [(ngModel)]="amount">
+  </mat-form-field>
+
+  <mat-action-row>
+    <button mat-button color="warn" (click)="pagar(amount)">Pagar</button>
+
+  </mat-action-row>
+</mat-expansion-panel>
+</mat-accordion>
+
+<mat-card class="example-card" *ngIf="paid">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>Orden de compra: {{transaction.buyOrder}}</mat-card-title>
+    <mat-card-subtitle>Pack de productos</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <p>Monto: {{transaction.detailOutput.amount}}</p>
+    <p>Numero de tarjeta: ********{{transaction.cardDetail.cardNumber}}</p>
+    <p>Fecha: {{transaction.transactionDate}}</p>
+    <p>Tipo de pago: {{paymentType(transaction.detailOutput.paymentTypeCode)}}</p>
+  </mat-card-content>
+</mat-card>
+
+<mat-progress-spinner *ngIf="interval" style="margin:0 auto;" mode="indeterminate"></mat-progress-spinner>
