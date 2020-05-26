@@ -1,8 +1,8 @@
 import { PaidService } from './../services/paid.service';
 import { Component } from '@angular/core';
 import { WebPayService } from 'src/services/webpay.service';
-import { OnInit } from '@angular/core/src/metadata/lifecycle_hooks';
-import { MatSnackBar } from '@angular/material';
+import { OnInit } from '@angular/core';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-root',
