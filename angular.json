@@ -125,5 +125,8 @@
       }
     }
   },
-  "defaultProject": "webpay"
+  "defaultProject": "webpay",
+  "cli": {
+    "analytics": "b653ab0a-dc5a-44c4-af0f-cdef02a442d1"
+  }
 }
